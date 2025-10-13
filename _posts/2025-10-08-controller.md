@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Controller"
+title: "Controller / 제어기"
 date: 2025-10-08 21:12 +0900
 tags: [test]
 ---
@@ -25,12 +25,29 @@ In cases where the system model does not have a direct feedthrough, $\mathbf{D}$
 Controllability
 ===
 Controllability condition implies that it is possible - by admissible inputs - to steer the states from any initial value to any final value within some finite time window. A continuous time-invariant linear state-space model is controllable if and only if(iff) \\
-$\mathsf{rank} [\mathbf{B} \, \mathbf{AB} \, \cdots \mathbf{A}^{n-1}\mathbf{B}] = n$
+$$
+\operatorname{rank}
+\begin{bmatrix}
+\mathbf{B} \, \mathbf{AB} \, \cdots \mathbf{A}^{n-1}\mathbf{B}
+\end{bmatrix}
+= n
+$$
 
 Observability
 ===
 Observability is a measure for how well internal states of a system can be inferred by knowledge of its external outputs. A continuous time-invariant linear state-space model is observable if and only if(iff) \\
-$\mathsf{rank} [\mathbf{C} \, \mathbf{CA} \, \cdots \mathbf{CA}^{n-1}]^{T} = n$
+$$
+\operatorname{rank}
+\begin{bmatrix}
+\mathbf{C} \\ 
+\mathbf{CA} \\
+\vdots \\
+\mathbf{CA}^{n-1}
+\end{bmatrix}
+ = n
+$$
+
+---
 
 상태공간 방정식
 ===
@@ -50,10 +67,25 @@ $\mathbf{D}$는 "피드스루(feedthrough) 행렬", $\mathbf{D} \in \mathbb{R}^{
 
 가제어성(제어 가능성)
 ===
-가제어성 조건은 - 용인될 수 있는 제어 입력에 의하여 - 상태를 임의의 초기 조건으로부터 또 다른 어떤 최종 조건으로 유한 시간 내에 이끌어갈 수 있다는 것이다. 연속적인 시불변 선형 상태 공간 모델이 제어 가능일 필요 충분 조건은 다음과 같다.
-$\mathsf{rank} [\mathbf{B} \, \mathbf{AB} \, \cdots \mathbf{A}^{n-1}\mathbf{B}] = n$
+가제어성 조건은 - 용인될 수 있는 제어 입력에 의하여 - 상태를 임의의 초기 조건으로부터 또 다른 어떤 최종 조건으로 유한 시간 내에 이끌어갈 수 있다는 것이다. 연속적인 시불변 선형 상태 공간 모델이 제어 가능일 필요 충분 조건은 다음과 같다. \\
+$$
+\operatorname{rank}
+\begin{bmatrix}
+\mathbf{B} \, \mathbf{AB} \, \cdots \mathbf{A}^{n-1}\mathbf{B}
+\end{bmatrix}
+= n
+$$
 
 가관측성(관측가능성)
 ===
-가관측성은 일종의 척도로서, 어떤 시스템 내부의 상태가 그 외부 출력을 앎에 따라 얼마나 잘 추정될 수 있는가 하는 것이다. 연속적인 시불변 선형 상태 공간 모델이 관측 가능할 필요 충분 조건은 다음과 같다.
-$\mathsf{rank} [\mathbf{C} \, \mathbf{CA} \, \cdots \mathbf{CA}^{n-1}]^{T} = n$
+가관측성은 일종의 척도로서, 어떤 시스템 내부의 상태가 그 외부 출력을 앎에 따라 얼마나 잘 추정될 수 있는가 하는 것이다. 연속적인 시불변 선형 상태 공간 모델이 관측 가능할 필요 충분 조건은 다음과 같다. \\
+$$
+\operatorname{rank}
+\begin{bmatrix}
+\mathbf{C} \\ 
+\mathbf{CA} \\
+\vdots \\
+\mathbf{CA}^{n-1}
+\end{bmatrix}
+ = n
+$$
